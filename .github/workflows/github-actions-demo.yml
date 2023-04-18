@@ -19,26 +19,43 @@ jobs:
       matrix:
         # define package to repository map
         package:
-          -
-            local_path: 'ui'
+          - local_path: 'ui'
             split_repository: 'monorepo-ui'
 
     steps:
-      -   uses: actions/checkout@v3
-
-      # no tag
-      -
+      - uses: actions/checkout@v3
+      - if: "!startsWith(github.ref, 'refs/tags/')"
         uses: "danharrin/monorepo-split-github-action@v2.3.0"
         with:
           # ↓ split "packages/easy-coding-standard" directory
           package_directory: 'packages/${{ matrix.package.local_path }}'
 
           # ↓ into https://github.com/symplify/easy-coding-standard repository
-#          repository_organization: 'wambugudavis'
+#          repository_organization: 'symplify'
           repository_name: '${{ matrix.package.split_repository }}'
 
           # [optional, with "github.com" as default]
-#          repository_host: git.private.com:1234
+          repository_host: github.com/wambugudavis
+
+          # ↓ the user signed under the split commit
+          user_name: "wambugudavis"
+          user_email: "davvey27@gmail.com"
+
+        # with tag
+      - if: "startsWith(github.ref, 'refs/tags/')"
+        uses: "danharrin/monorepo-split-github-action@v2.3.0"
+        with:
+          tag: ${GITHUB_REF#refs/tags/}
+
+          # ↓ split "packages/easy-coding-standard" directory
+          package_directory: 'packages/${{ matrix.package.local_path }}'
+
+          # ↓ into https://github.com/symplify/easy-coding-standard repository
+#          repository_organization: 'symplify'
+          repository_name: '${{ matrix.package.split_repository }}'
+
+          # [optional, with "github.com" as default]
+          repository_host: github.com/wambugudavis
 
           # ↓ the user signed under the split commit
           user_name: "wambugudavis"
