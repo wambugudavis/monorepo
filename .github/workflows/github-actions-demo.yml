@@ -20,8 +20,8 @@ jobs:
         # define package to repository map
         package:
           -
-            local_path: 'apps/web'
-            split_repository: 'monorepo-app-1'
+            local_path: 'ui'
+            split_repository: 'monorepo-ui'
 
     steps:
       -   uses: actions/checkout@v3
