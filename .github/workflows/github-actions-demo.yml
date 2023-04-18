@@ -28,7 +28,7 @@ jobs:
 
       # no tag
       -
-        uses: "symplify/monorepo-split-github-action@2.1"
+        uses: "danharrin/monorepo-split-github-action@v2.3.0"
         with:
           # ↓ split "packages/easy-coding-standard" directory
           package_directory: 'packages/${{ matrix.package.local_path }}'
