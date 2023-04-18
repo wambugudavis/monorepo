@@ -28,30 +28,8 @@ jobs:
 
       # no tag
       -
-        if: "!startsWith(github.ref, 'refs/tags/')"
         uses: "symplify/monorepo-split-github-action@2.1"
         with:
-          # ↓ split "packages/easy-coding-standard" directory
-          package_directory: 'packages/${{ matrix.package.local_path }}'
-
-          # ↓ into https://github.com/symplify/easy-coding-standard repository
-#          repository_organization: 'wambugudavis'
-          repository_name: '${{ matrix.package.split_repository }}'
-
-          # [optional, with "github.com" as default]
-#          repository_host: git.private.com:1234
-
-          # ↓ the user signed under the split commit
-          user_name: "wambugudavis"
-          user_email: "davvey27@gmail.com"
-
-      # with tag
-      -
-        if: "startsWith(github.ref, 'refs/tags/')"
-        uses: "symplify/monorepo-split-github-action@2.1"
-        with:
-          tag: ${GITHUB_REF#refs/tags/}
-
           # ↓ split "packages/easy-coding-standard" directory
           package_directory: 'packages/${{ matrix.package.local_path }}'
 
