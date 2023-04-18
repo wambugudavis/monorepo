@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "dayjs": "^1.11.7",
+    "formik": "^2.2.9",
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -18,7 +20,12 @@
     "@types/node": "^17.0.12",
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",
+    "autoprefixer": "^10.4.14",
     "eslint-config-custom": "*",
+    "postcss": "^8.4.22",
+    "sass": "^1.62.0",
+    "tailwind-config": "*",
+    "tailwindcss": "^3.3.1",
     "tsconfig": "*",
     "typescript": "^4.5.3"
   }

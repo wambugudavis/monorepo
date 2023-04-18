@@ -1,0 +1,36 @@
+@use '@carbon/react/scss/themes';
+@use '@carbon/react/scss/theme' with (
+  $theme: (
+    link-primary: #123437,
+    focus: #123437,
+    layer-selected-inverse: #123437,
+    background-inverse: #123437,
+    support-error-inverse: #FF6E66,
+    support-success-inverse: #4ABFAB,
+  ),
+  $fallback: themes.$g10
+);
+@use '@carbon/react/scss/components/button/tokens' as button-tokens;
+@use '@carbon/themes/scss/utilities';
+@use '@carbon/react';
+
+$button-token-overrides: (
+        button-primary: #123437,
+        button-tertiary: #123437,
+        button-primary-active: #123437,
+        button-tertiary-active: #123437,
+        button-primary-hover: #123437,
+        button-tertiary-hover: #123437
+);
+
+$button-tokens: utilities.merge(button-tokens.$button-tokens, $button-token-overrides);
+
+@include theme.add-component-tokens($button-tokens);
+
+:root {
+  @include theme.theme();
+}
+
+.cds--content {
+  @apply mt-0 py-0
+}
