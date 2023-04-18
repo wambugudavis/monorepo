@@ -31,11 +31,11 @@ jobs:
           package_directory: 'packages/${{ matrix.package.local_path }}'
 
           # ↓ into https://github.com/symplify/easy-coding-standard repository
-#          repository_organization: 'symplify'
+          repository_organization: 'wambugudavis'
           repository_name: '${{ matrix.package.split_repository }}'
 
           # [optional, with "github.com" as default]
-          repository_host: github.com/wambugudavis
+#          repository_host: github.com/wambugudavis
 
           # ↓ the user signed under the split commit
           user_name: "wambugudavis"
@@ -51,11 +51,11 @@ jobs:
           package_directory: 'packages/${{ matrix.package.local_path }}'
 
           # ↓ into https://github.com/symplify/easy-coding-standard repository
-#          repository_organization: 'symplify'
+          repository_organization: 'wambugudavis'
           repository_name: '${{ matrix.package.split_repository }}'
 
           # [optional, with "github.com" as default]
-          repository_host: github.com/wambugudavis
+#          repository_host: github.com/wambugudavis
 
           # ↓ the user signed under the split commit
           user_name: "wambugudavis"
