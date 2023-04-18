@@ -114,7 +114,7 @@ export default function Home() {
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
-            <TopNavigation/>
+            <TopNavigation header="Patients"/>
             <div className="mt-12 bg-white p-6">
                 <div className="flex justify-between items-end pb-12">
                     <div className="">

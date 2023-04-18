@@ -9,11 +9,15 @@ import {
 } from '@carbon/react';
 import {Switcher, Notification, UserAvatar, Search} from '@carbon/react/icons';
 
-export function TopNavigation() {
+interface Props {
+    header?: string;
+}
+
+export function TopNavigation({header = 'Dashboard'}: Props) {
     return (
         <Header aria-label="Tibu Health">
             <HeaderName href="#" prefix="TIBU HEALTH">
-                Dashboard
+                { header }
             </HeaderName>
             <HeaderNavigation aria-label="IBM [Platform]">
                 <HeaderMenuItem href="http://localhost:3001">Patients</HeaderMenuItem>
