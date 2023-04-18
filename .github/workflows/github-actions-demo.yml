@@ -1,2 +1,2 @@
-- name: Monorepo Split
-  uses: danharrin/monorepo-split-github-action@v2.3.0
+name: Monorepo Split
+uses: danharrin/monorepo-split-github-action@v2.3.0
