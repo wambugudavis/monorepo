@@ -24,7 +24,7 @@ jobs:
             split_repository: 'monorepo-app-1'
 
     steps:
-      -   uses: actions/checkout
+      -   uses: actions/checkout@v3
 
       # no tag
       -
